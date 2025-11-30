@@ -36,3 +36,12 @@ We have used @Autowire annotation in the `AutowireAnnotationController` class fo
 instead of `@Component` Annotation. `@Service` does the same work as `@Component` but also makes writing service-layer classes to make your codebase more expressive and self-documenting.
 
 ![Autowire](Web-Output-Autowire.png)
+
+#### *@Qualifier* Annotation
+Since we have added one more implementation of Greet Interface
+  * @GreetHello
+  * @GreetHi
+
+Hence to resolve conflict, we need to qualify the bean to be injected. And we have added the `@Qualifier` Annotation in the `AutowireAnnotationController` class.
+
+![Qualifier](Web-Output-Qualifier.png)
