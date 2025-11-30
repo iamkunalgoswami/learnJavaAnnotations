@@ -11,6 +11,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/autowire")
 public class AutowireAnnotationController {
+    private final Greet greetHello;
+    private final Greet greetHi;
+
+    @Autowired
+    public AutowireAnnotationController(Greet greetHello, @Qualifier("greetHi") Greet greetHi) {
+        this.greetHello = greetHello;
+        this.greetHi = greetHi;
+    }
 
     /*
     * Added one more implementation of Greet Interface
@@ -19,12 +27,18 @@ public class AutowireAnnotationController {
     * Hence to resolve conflict,
     * we need to qualify the bean to be injected.
     * */
-    @Autowired
-    @Qualifier("greetHi")
-    private Greet greet;
-    @GetMapping("/greetHello")
+
+    @GetMapping("/greetHi")
     @ResponseBody
     public String greetHi(){
-        return greet.sayMessage();
+        return greetHi.sayMessage();
     }
+
+    @GetMapping("/greetHello")
+    @ResponseBody
+    public String greetHello(){
+        return greetHello.sayMessage();
+    }
+
+
 }

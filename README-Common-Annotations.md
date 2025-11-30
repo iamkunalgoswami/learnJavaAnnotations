@@ -45,3 +45,11 @@ Since we have added one more implementation of Greet Interface
 Hence to resolve conflict, we need to qualify the bean to be injected. And we have added the `@Qualifier` Annotation in the `AutowireAnnotationController` class.
 
 ![Qualifier](Web-Output-Qualifier.png)
+
+#### *@Primary* Annotation
+`@Primary` Annotation deines the default implementation of an **Interface** and hence we need to use `@Qualifier` only if we want a specific injection like we have done for `GreetHi` class.  
+In case we don't use the **@Qualifier**, it will give us the **default implementation** i.e. `GreetHello` since we have used the `@Primary` Annotation along with `@Service` in the `GreetHello` class.
+
+![Say Hi](Web-Output-Autowire-Hi.png)
+
+![Say Hello](Web-Output-Autowire-Hello.png)
