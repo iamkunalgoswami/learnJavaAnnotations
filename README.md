@@ -1,26 +1,28 @@
 
 # Adding Spring dependencies
+```xml
     <spring.version>6.1.10</spring.version>
 
     <dependencies>
-    <dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-context</artifactId>
-    <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-webmvc</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    
-    <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.13.2</version> 
-        <scope>test</scope>
-    </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version> 
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+```
+
 
 # Add Jetty to the Server
 
@@ -119,8 +121,7 @@ public class WebAppInitializer implements WebApplicationInitializer {
     }
 }
 ```
-
     6. HelloController
        •  My original App.java just prints to console
        •  Controllers handle HTTP requests and return responses
-       •  Without at least one controller, visiting the URL would show an error
+       •  Without at least one controller, visiting the URL would show an error.
